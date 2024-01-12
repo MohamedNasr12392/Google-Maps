@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_maps/constants/my_colors.dart';
 
 class PhoneFormField extends StatelessWidget {
-  PhoneFormField({super.key});
-  late String _phoneNumber;
+  const PhoneFormField({super.key , required this.phoneFieldController});
+
+  final TextEditingController phoneFieldController ;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +66,7 @@ class PhoneFormField extends StatelessWidget {
               }
             },
             onSaved: (newValue) {
-              _phoneNumber = newValue!;
+              phoneFieldController.text = newValue!;
             },
           ),
         ),

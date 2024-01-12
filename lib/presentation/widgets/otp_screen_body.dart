@@ -5,8 +5,9 @@ import 'package:google_maps/presentation/widgets/otp_texts.dart';
 import 'package:google_maps/presentation/widgets/pin_code_digits.dart';
 
 class OtpScreenBody extends StatelessWidget {
-  const OtpScreenBody({super.key});
+  const OtpScreenBody({super.key , required this.phoneNumber});
 
+  final String phoneNumber ;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,8 +16,8 @@ class OtpScreenBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const OtpTexts(
-                phoneNumber: '01067619364',
+              OtpTexts(
+                phoneNumber: phoneNumber,
               ),
               const SizedBox(
                 height: 88,
