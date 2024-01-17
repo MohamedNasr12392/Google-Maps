@@ -6,9 +6,11 @@ final class PhoneAuthInitial extends PhoneAuthState {}
 
 final class LoadingState extends PhoneAuthState {}
 
-final class SubmitPhoneNumberState extends PhoneAuthState {}
+final class PhoneNumberSubmitedState extends PhoneAuthState {}
 
 final class OtpVerifiedState extends PhoneAuthState {}
+
+final class ExitLoadingState extends PhoneAuthState {}
 
 final class ErrorState extends PhoneAuthState {
   final String errorMsg;

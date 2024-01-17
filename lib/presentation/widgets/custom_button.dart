@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-class NextAndSubmitButton extends StatelessWidget {
-  const NextAndSubmitButton({
-    super.key,
-    required this.buttonTextValue,
-    required this.onPressedAction
-  });
+class CustomButton extends StatelessWidget {
+  const CustomButton(
+      {super.key,
+      required this.buttonTextValue,
+      required this.onPressedAction});
   final String buttonTextValue;
-  final Function onPressedAction ;
+  final Function onPressedAction;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +18,9 @@ class NextAndSubmitButton extends StatelessWidget {
           backgroundColor: Colors.black,
           shape: const BeveledRectangleBorder(),
         ),
-        onPressed: (){
+        onPressed: () {
           onPressedAction();
-        } ,
+        },
         child: Text(
           buttonTextValue,
           style: const TextStyle(

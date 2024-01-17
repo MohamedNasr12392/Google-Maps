@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_maps/bussiness_logic/cubit/phone_auth_cubit/phone_auth_cubit.dart';
 import 'package:google_maps/presentation/widgets/otp_digit.dart';
 
 class PinCodeDigits extends StatelessWidget {
-  PinCodeDigits({
-    super.key,
-  });
-
-  final TextEditingController _fieldOne   =   TextEditingController();
-  final TextEditingController _fieldTwo   =   TextEditingController();
-  final TextEditingController _fieldThree =   TextEditingController();
-  final TextEditingController _fieldFour  =   TextEditingController();
-  final TextEditingController _fieldFive  =   TextEditingController();
-  final TextEditingController _fieldSex   =   TextEditingController();
+  const PinCodeDigits({super.key, required this.phoneAuthCubit});
+  final PhoneAuthCubit phoneAuthCubit;
 
   @override
   Widget build(BuildContext context) {
@@ -19,27 +12,27 @@ class PinCodeDigits extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         OtpDigit(
-          otpController: _fieldOne,
+          otpController: phoneAuthCubit.fieldOne,
           autoFocus: true,
         ),
         OtpDigit(
-          otpController: _fieldTwo,
+          otpController: phoneAuthCubit.fieldTwo,
           autoFocus: false,
         ),
         OtpDigit(
-          otpController: _fieldThree,
+          otpController: phoneAuthCubit.fieldThree,
           autoFocus: false,
         ),
         OtpDigit(
-          otpController: _fieldFour,
+          otpController: phoneAuthCubit.fieldFour,
           autoFocus: false,
         ),
         OtpDigit(
-          otpController: _fieldFive,
+          otpController: phoneAuthCubit.fieldFive,
           autoFocus: false,
         ),
         OtpDigit(
-          otpController: _fieldSex,
+          otpController: phoneAuthCubit.fieldSex,
           autoFocus: false,
         ),
       ],
